@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card class="inline-form-card">
+      <nb-card-header>Reporte de gastos</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="frm_rangepicker" class="form-inline" (ngSubmit)="onSubmit()">
+
+            <input   formControlName="rango" fullWidth nbInput placeholder="Seleccione rango de fechas a generar" [nbDatepicker]="rangepicker">
+            <nb-rangepicker (rangeChange)="changePicker($event)"  #rangepicker></nb-rangepicker>
+
+        </form>
+      </nb-card-body>
+      <button style="margin-top: 5px;" type="submit" (click)="onSubmit()" nbButton status="primary">Generar</button>
+    </nb-card>
+  </div>
+</div>
